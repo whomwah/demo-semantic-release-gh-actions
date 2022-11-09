@@ -1,0 +1,29 @@
+#!/usr/bin/env sh
+
+set -e
+VERSION=$1
+NOTES=$2
+
+echo "Create file to package... ✅"
+touch hello.txt
+
+echo "Add version number: $VERSION to demo.txt... ✅"
+echo $VERSION >> hello.txt
+
+echo "Add release notes to demo.txt... ✅"
+echo $NOTES >> hello.txt
+
+echo "Bump the VERSION file we have... ✅"
+echo $VERSION > VERSION
+
+echo "Create tmp releases dir... ✅"
+mkdir -p releases
+
+echo "Create a folder to hold our new release demo.$VERSION.zip... ✅"
+zip -r "releases/demo.$VERSION.zip" hello.txt
+
+echo "cleanup any assets we no longer need ... ✅"
+rm hello.txt
+
+echo
+echo "New release created! [$VERSION] 🥳"
