@@ -4,24 +4,35 @@ set -e
 VERSION=$1
 NOTES=$2
 
+# We first create a new text file which we will be releasing
 echo "Create file to package... ✅"
 touch hello.txt
 
+# We now pump the VERSION and NOTES we passed to this script
+# into our release hello.txt file
 echo "Add version number: $VERSION to demo.txt... ✅"
 echo $VERSION >> hello.txt
-
 echo "Add release notes to demo.txt... ✅"
 echo $NOTES >> hello.txt
 
+# Here we are also replacing the version we have in our VERSION
+# file with the latest version passed to this script. We will
+# also commit this changed file later in the package process
 echo "Bump the VERSION file we have... ✅"
 echo $VERSION > VERSION
 
+# Just creating a folder to dump our release in.
 echo "Create tmp releases dir... ✅"
 mkdir -p releases
 
+# Here we create a new release folder to put our hello.txt file in
+# and we zip it up with the zip name using the VERSION in it.
 echo "Create a folder to hold our new release demo.$VERSION.zip... ✅"
 zip -r "releases/demo.$VERSION.zip" hello.txt
 
+# finally we clean up any assets we don't need. We don't strickly
+# need to do this and could just rely on our .gitIgnore file
+# ignoring any assets we don't care about.
 echo "cleanup any assets we no longer need ... ✅"
 rm hello.txt
 

@@ -23,7 +23,7 @@ jobs:
           node-version: 16
 
       - name: Setup package.json
-        run: echo '{"name":"alfred-github-workflow", "devDependencies":{"esbuild":"^0.15.9","@semantic-release/git":"^10.0.1","@semantic-release/exec":"^6.0.3","semantic-release":"^19.0.5"}}' > package.json
+        run: echo '{"name":"demo", "devDependencies":{"@semantic-release/git":"^10.0.1","@semantic-release/exec":"^6.0.3","semantic-release":"^19.0.5"}}' > package.json
 
       - name: Install dependencies
         run: npm install
