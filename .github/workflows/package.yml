@@ -8,8 +8,8 @@ on:
 
 jobs:
   release:
-    if: github.ref_name == 'main'
-    runs-on: macos-latest
+    if: ${{ github.ref_name == 'main' && github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
