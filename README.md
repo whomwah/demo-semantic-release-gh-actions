@@ -35,10 +35,23 @@ Now to the important files that really do all the work:
 - `.github/workflows/package.yml` This is the Github action file installs
   `semantic-release` and its dependencies and then run it.
 
-Finally you will need to create a new `secret` ENV in order to allow enough permission for GH to generate a new commit into your project if required. You do this by visiting https://github.com/settings/tokens and generating a new `access token` with everything in the `repo` scope ticked. Once you have created the token, don't hide it as you will need to use it in a new secret in your repo. For example for this demo project: https://github.com/whomwah/demo-semantic-release-gh-actions/settings/secrets/actions. The new secret needs to be called `GH_AUTH_TOKEN` and should contain the value of the token you generated above.
+Finally you will need to create a new `secret` ENV in order to allow enough
+permission for GH to generate a new commit into your project if required. You do
+this by visiting https://github.com/settings/tokens and generating a new
+`access token` with everything in the `repo` scope ticked. Once you have created
+the token, don't hide it as you will need to use it in a new secret in your
+repo. For example for this demo project:
+https://github.com/whomwah/demo-semantic-release-gh-actions/settings/secrets/actions.
+The new secret needs to be called `GH_AUTH_TOKEN` and should contain the value
+of the token you generated above.
 
-Once you have pushed all this to a new repo, you can test it by updating a file and creating a new commit using the correct commit message format as described https://github.com/semantic-release/semantic-release#commit-message-format. For example:
+Once you have pushed all this to a new repo, you can test it by updating a file
+and creating a new commit using the correct commit message format as described
+https://github.com/semantic-release/semantic-release#commit-message-format. For
+example:
 
 `git commit -m "feat: I've just added a new feature"`
 
-This will then trigger the CI to create a new release. See https://github.com/whomwah/demo-semantic-release-gh-actions/releases for an example of this.
+This will then trigger the CI to create a new release. See
+https://github.com/whomwah/demo-semantic-release-gh-actions/releases for an
+example of this.
