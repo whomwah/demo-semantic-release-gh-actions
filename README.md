@@ -1,4 +1,4 @@
-# Semantic Release and Github Actions demo
+# Semantic Release and Github Actions Demo
 
 This is demo project showing how you can use both
 [`semantic-release`](https://github.com/semantic-release/semantic-release) and
@@ -34,3 +34,5 @@ Now to the important files that really do all the work:
   run your tests.
 - `.github/workflows/package.yml` This is the Github action file installs
   `semantic-release` and its dependencies and then run it.
+
+Generate a new release
