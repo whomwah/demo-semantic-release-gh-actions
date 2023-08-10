@@ -1,5 +1,5 @@
 export function sayHello() {
-  return "Hello World";
+  return "Hello World 2";
 }
 
 sayHello();
